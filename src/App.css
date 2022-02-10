@@ -20,8 +20,7 @@ body {
 .todo {
   display: flex;
   justify-content:start;
-  align-items:center;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 5px;
   font-size: 14px;
 }
@@ -36,11 +35,14 @@ body {
   text-decoration: line-through;
   display: flex;
   justify-content:start;
-  align-items:center;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 5px;
   font-size: 14px;
 }
 .todo-buttons{
   color: black;
+}
+.todo-count{
+  font-size: 10px;
+  
 }

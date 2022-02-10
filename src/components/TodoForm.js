@@ -1,28 +1,42 @@
-import React,{useState, useRef, useEffect} from 'react'
+import React from 'react'
 import {HiOutlinePlus} from 'react-icons/hi'
+import {MdOutlineModeEditOutline} from 'react-icons/md'
 
-function TodoForm({addTodo}) {
-    const [input,setInput] = useState('');
-    const handleSubmit = e => {
-        e.preventDefault();
-        if(!input){
-            return;
-        }
-        addTodo(input);
-        setInput('');
-        inputRef.current.focus();
-    }
-    const inputRef = useRef(null);
-    useEffect = (() => {
-        inputRef.current.focus();
-    })
-    const handleChange = e => {
-        setInput(e.target.value);
-    }
-
+function TodoForm({handleChange, handleSubmit, input, inputRef}, props) {
+   
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <input
+        {props.edit?(
+            <>
+                <input
+                    type="text"
+                    className="todo-input-edit-box"
+                    placeholder="Edit a todo"
+                    value={input}
+                    name="text"
+                    ref={inputRef}
+                    onChange={handleChange}
+                    autoFocus
+                />
+                <MdOutlineModeEditOutline className="todo-edit-button"onClick={handleSubmit} />
+            </>
+            
+        ):(
+            <>
+                <input
+                    type="text"
+                    className="todo-input-add-box"
+                    placeholder="Enter a todo"
+                    value={input}
+                    name="text"
+                    ref={inputRef}
+                    onChange={handleChange}
+                    autoFocus
+                />
+                <HiOutlinePlus className="todo-add-button"onClick={handleSubmit} />
+            </>
+        )}
+      {/* <input
         className="input-box"
         placeholder="Enter a todo"
         value={input}
@@ -31,7 +45,7 @@ function TodoForm({addTodo}) {
         onChange={handleChange}
         autoFocus
       />
-      <HiOutlinePlus className="todo-add-button"onClick={handleSubmit} />
+      <HiOutlinePlus className="todo-add-button"onClick={handleSubmit} /> */}
     </form>
   );
 }
