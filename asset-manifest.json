@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/todo-sponge/static/css/main.dc201ebb.css",
+    "main.js": "/todo-sponge/static/js/main.3990ca5a.js",
+    "index.html": "/todo-sponge/index.html",
+    "main.dc201ebb.css.map": "/todo-sponge/static/css/main.dc201ebb.css.map",
+    "main.3990ca5a.js.map": "/todo-sponge/static/js/main.3990ca5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc201ebb.css",
+    "static/js/main.3990ca5a.js"
+  ]
+}
